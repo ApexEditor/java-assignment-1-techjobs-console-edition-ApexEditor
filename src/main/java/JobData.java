@@ -5,10 +5,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -78,6 +75,17 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
 
             String aValue = row.get(column);
+//
+//            if (column.equals("all")) {
+//                for(int i = 0; i < allJobs.size(); i++){
+//                String job = "";
+//                for (Map.Entry<String, String> entry : allJobs.get(i).entrySet()){
+//
+//                }
+//            }
+//            //lowercase given value
+//            aValue = aValue.toLowerCase();
+//            value = value.toLowerCase();
 
             if (aValue.contains(value)) {
                 jobs.add(row);
@@ -98,8 +106,35 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> row : allJobs) {
+
+            for (Map.Entry<String, String> column : row.entrySet()) {
+                String y = column.getKey();
+                String z = column.getKey();
+
+                //to lowercase strings
+//                String c = null;
+//                String d = null;
+
+//                String y = y.toLowerCase();
+//                String z = z.toLowerCase();
+                System.out.println(y.toLowerCase());
+                System.out.println(z.toLowerCase());
+
+
+                y = y.toLowerCase();
+                z = z.toLowerCase();
+
+                if(y.contains(value) || z.contains(value)) {
+                    jobs.add(row);
+                }
+            }
+        }
+        return jobs;
         // TODO - implement this method
-        return null;
+//        return null;
     }
 
     /**
