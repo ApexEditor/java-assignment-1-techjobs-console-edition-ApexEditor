@@ -84,8 +84,8 @@ public class JobData {
 //                }
 //            }
 //            //lowercase given value
-//            aValue = aValue.toLowerCase();
-//            value = value.toLowerCase();
+            aValue = aValue.toLowerCase();
+            value = value.toLowerCase();
 
             if (aValue.contains(value)) {
                 jobs.add(row);
@@ -111,8 +111,8 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
 
             for (Map.Entry<String, String> column : row.entrySet()) {
-                String y = column.getKey();
-                String z = column.getKey();
+                String columnKey = column.getKey().toLowerCase();
+
 
                 //to lowercase strings
 //                String c = null;
@@ -120,14 +120,14 @@ public class JobData {
 
 //                String y = y.toLowerCase();
 //                String z = z.toLowerCase();
-                System.out.println(y.toLowerCase());
-                System.out.println(z.toLowerCase());
+                //System.out.println(columnKey.toLowerCase());
 
 
-                y = y.toLowerCase();
-                z = z.toLowerCase();
 
-                if(y.contains(value) || z.contains(value)) {
+
+
+
+                if(columnKey.contains(value.toLowerCase())) {
                     jobs.add(row);
                 }
             }
