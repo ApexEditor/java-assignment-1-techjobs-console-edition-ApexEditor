@@ -123,10 +123,6 @@ public class JobData {
                 //System.out.println(columnKey.toLowerCase());
 
 
-
-
-
-
                 if(columnKey.contains(value.toLowerCase())) {
                     jobs.add(row);
                 }
