@@ -107,22 +107,9 @@ public class JobData {
         loadData();
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-
         for (HashMap<String, String> row : allJobs) {
-
             for (Map.Entry<String, String> column : row.entrySet()) {
-                String columnKey = column.getKey().toLowerCase();
-
-
-                //to lowercase strings
-//                String c = null;
-//                String d = null;
-
-//                String y = y.toLowerCase();
-//                String z = z.toLowerCase();
-                //System.out.println(columnKey.toLowerCase());
-
-
+                String columnKey = column.getValue().toLowerCase();
                 if(columnKey.contains(value.toLowerCase())) {
                     jobs.add(row);
                 }
